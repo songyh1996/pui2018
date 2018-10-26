@@ -617,12 +617,8 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 }
 
 #checkout-label {
-	margin-top: 10px;
-}
-
-.checkout-label {
+	margin-left: 20px;
 	margin-top: 20px;
-	margin-left: 90px;
 	font-family: 'P22Medium';
 	font-size: 1em;
 	color: #939393;
@@ -630,7 +626,7 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 }
 
 .checkout-item {
-	width: 600px;
+	width: 620px;
 	height: 94px;
 
 	font-family: 'P22Heavy';
@@ -652,4 +648,80 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 	height: 20px;
 	border: 1px solid #FF85BF;
 	text-align: center;
+}
+
+.image-label {
+	width: 140px;
+	height: 50px;
+	border: 1px solid red;
+	display: inline-block;
+	float: left;
+}
+
+.name-label {
+	width: 160px;
+	height: 50px;
+	border: 1px solid red;
+	display: inline-block;
+	float: left;
+
+
+}
+
+.quantity-label {
+	width: 132px;
+	height: 50px;
+	border: 1px solid red;
+	display: inline-block;
+	float: left;
+
+}
+
+.price-label {
+	width: 130px;
+	height: 50px;
+	border: 1px solid red;
+	display: inline-block;
+	float: left;
+
+}
+
+.checkout-image {
+	width: 140px;
+	height: 95px;
+	border: 1px solid red;
+	display: inline-block;
+	float: left;
+}
+
+.checkout-name {
+	width: 160px;
+	height: 95px;
+	border: 1px solid red;
+	display: inline-block;
+	float: left;
+
+
+}
+
+.checkout-quantity {
+	width: 132px;
+	height: 95px;
+	border: 1px solid red;
+	display: inline-block;
+	float: left;
+
+}
+
+.checkout-price {
+	width: 130px;
+	height: 95px;
+	border: 1px solid red;
+	display: inline-block;
+	float: left;
+
+}
+
+.checkout-delete {
+
 }

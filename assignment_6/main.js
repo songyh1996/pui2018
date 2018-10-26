@@ -66,7 +66,6 @@ $(document).ready(function() {
   	});
 
   	$(".secondary-button").click(function() {
-
   		let image = $("#gallery-main-image").attr('src');
   		let name = $('.product-title')[0].textContent;
   		let yarn = $('#yarn-color')[0].textContent;
@@ -78,10 +77,15 @@ $(document).ready(function() {
   			items = [];
   			items.push(item);
   		}
-  		else{
+  		else {
   			items.push(item);
   		}
   		console.log(items);
   		localStorage.setItem("savedItems", JSON.stringify(items));
   	})
+
+
+   	let items_checkout = JSON.parse(localStorage.getItem("savedItems"));
+   	image = items_checkout[0].image;
+   	$("#checkout-image-file").attr("src",items_checkout[0].image);
 });
