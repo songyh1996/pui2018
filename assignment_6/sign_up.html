@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fluff Stuff - Create Account</title>
+    <meta charset="UTF-8">
+  	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<!-- Universal Nav Bar -->
+	<header>
+		<nav class="navigation-bar">
+			<a href="index.html"><img id="logo" src="images/logo.png" alt="Fluff Stuff Logo"></a>
+			<!-- Div block preventing menubar from overlapping the logo -->
+			<div id="left-aligned-menu"></div>
+			<!-- The actual navbar menu -->
+			<div id="right-aligned-menu">
+				<a href="index.html">HOME</a>
+				<a id="nav-underline" href="products.html">PRODUCTS</a>
+				<a href="cart.html">CART</a>
+			</div>
+		</nav>
+	</header>
+	<section class="section">
+		<!-- Container limiting contents into 1080px -->
+		<div class="container">
+			<div id="sign-up-block">
+				<div id="sign-up-left">
+					<div class="box-container">
+						<p class="box-title">Create Your Account</p>
+						<form>
+							<div class="inline-input-left">
+								<h4>First Name</h4><p id="required">*</p><br>
+								<input id="half-input" type="text">
+							</div>
+							<div class="inline-input-right">
+								<h4>Last Name</h4><p id="required">*</p><br>
+								<input id="half-input" type="text">
+							</div>
+							<div class="regular-input">
+								<h4>Username</h4><p id="required">*</p><br>
+								<input type="text">
+								<p class="requirements">6-16 characters long, may use letters, numbers & periods</p>
+							</div>
+							<div class="regular-input">
+								<h4>Password</h4><p id="required">*</p><br>
+								<input type="password">
+								<p class="requirements">Use 8 or more characters with a mix of letters, numbers & symbols</p>
+							</div>
+							<div class="regular-input">
+								<h4>Confirm Password</h4><p id="required">*</p><br>
+								<input type="password">
+							</div>
+						</form>
+						<br><br>
+						<button class="secondary-button">Create Account</button>
+						<button id="second-button" class="primary-button">Cancel</button>
+					</div>
+				</div>
+				<div id="sign-up-right">
+					
+				</div>
+			</div>
+
+		</div>
+	</section>
+	<div class="footer">
+		<div class="footer-container">Copyright © 2018 Fluff Stuff. All rights reserved.</div>
+	</div>
+</body>
+</html>
