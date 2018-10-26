@@ -692,6 +692,7 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 	border: 1px solid red;
 	display: inline-block;
 	float: left;
+	text-align: center;
 }
 
 .checkout-name {
@@ -700,8 +701,7 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 	border: 1px solid red;
 	display: inline-block;
 	float: left;
-
-
+	line-height: 0.9em;
 }
 
 .checkout-quantity {
@@ -724,4 +724,16 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 
 .checkout-delete {
 
+}
+
+.checkout-product-name {
+	font-family: "P22Heavy";
+	font-size: 1em;
+	color: #D18FB0;
+}
+
+.checkout-product-options {
+	font-family: "P22Heavy";
+	font-size: 0.7em;
+	color: #FF85BF;
 }

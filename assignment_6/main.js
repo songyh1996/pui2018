@@ -84,8 +84,28 @@ $(document).ready(function() {
   		localStorage.setItem("savedItems", JSON.stringify(items));
   	})
 
-
    	let items_checkout = JSON.parse(localStorage.getItem("savedItems"));
-   	image = items_checkout[0].image;
-   	$("#checkout-image-file").attr("src",items_checkout[0].image);
+   	for (x = 0; x < items_checkout.length; x++) {
+  		$("body #checkout-box").append(
+  			'<div class="checkout-item">\
+  				<div class="checkout-image"> \
+					<img class="checkout-image-file" src="">\
+				</div>\
+				<div class="checkout-name"><br> \
+					<span class="checkout-product-name"></span><br>\
+					<span class="checkout-product-yarn" class="checkout-product-options"></span><br>\
+					<span class="checkout-product-filling" class="checkout-product-options"></span>\
+				</div><div class="checkout-quantity"></div>\
+			<div class="checkout-price"></div>\
+			<div class="checkout-delete"></div>\
+		</div>');
+
+   		$(".checkout-image-file").attr("src",items_checkout[x].image);
+   		$(".checkout-image-file").attr("style","height: 93px;");
+   		$(".checkout-product-name").text(items_checkout[x].name);
+   		$(".checkout-product-yarn").text("-" + items_checkout[x].yarn);
+ 	  	$(".checkout-product-filling").text("-" + items_checkout[x].filling);
+   	}
+
+	
 });
