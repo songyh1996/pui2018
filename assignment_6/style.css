@@ -612,6 +612,8 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 	margin-top: 40px;
 	width: 660px;
 	height: 365px;
+	box-shadow: 0px 8px 50px 2px rgba(212, 212, 212, 0.5);
+
 }
 
 #checkout-label {
@@ -619,15 +621,16 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 }
 
 .checkout-label {
+	margin-top: 20px;
 	margin-left: 90px;
 	font-family: 'P22Medium';
 	font-size: 1em;
 	color: #939393;
-	display: inline;
+	display: inline-block;
 }
 
 .checkout-item {
-	width: 620px;
+	width: 600px;
 	height: 94px;
 
 	font-family: 'P22Heavy';
@@ -639,6 +642,7 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 	margin-top: 10px;
 	border-top: 1px solid gray;
 	border-bottom: 1px solid gray;
+
 }
 
 .quantity {
