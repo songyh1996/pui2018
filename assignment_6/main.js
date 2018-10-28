@@ -7,11 +7,10 @@ function Item(image, name, yarn, filling, quantity, price) {
   this.price = price;
 }
 
-var items = []
-
+// Product Detail Page JS
 $(document).ready(function() {
-  	let items = JSON.parse(localStorage.getItem("savedItems"));
-
+	var items = [];
+  	var items = JSON.parse(localStorage.getItem("savedItems"));
 	// Yarn Color
 	$("#yarn-1").click(function() {
 		$("#yarn-color").text("After School Special");
@@ -71,7 +70,8 @@ $(document).ready(function() {
   		let yarn = $('#yarn-color')[0].textContent;
   		let filling = $('#filling-choice')[0].textContent;
   		let quantity = $('.quantity')[0].value;
-  		let price = $('.card-price')[0].textContent;
+  		let price = $('.card-price')[0].textContent.substr(1);
+  		console.log(typeof price);
   		item = new Item(image, name, yarn, filling, quantity, price);
   		if (items == null) {
   			items = [];
@@ -84,28 +84,59 @@ $(document).ready(function() {
   		localStorage.setItem("savedItems", JSON.stringify(items));
   	})
 
-   	let items_checkout = JSON.parse(localStorage.getItem("savedItems"));
+  	// Creating Cart Page
+   	var items_checkout = JSON.parse(localStorage.getItem("savedItems"));
+   	let totalPrice = parseInt(0);
    	for (x = 0; x < items_checkout.length; x++) {
   		$("body #checkout-box").append(
   			'<div class="checkout-item">\
   				<div class="checkout-image"> \
-					<img class="checkout-image-file" src="">\
+					<img class="checkout-image-file" src="' + items_checkout[x].image + '">\
 				</div>\
 				<div class="checkout-name"><br> \
-					<span class="checkout-product-name"></span><br>\
-					<span class="checkout-product-yarn" class="checkout-product-options"></span><br>\
-					<span class="checkout-product-filling" class="checkout-product-options"></span>\
-				</div><div class="checkout-quantity"></div>\
-			<div class="checkout-price"></div>\
-			<div class="checkout-delete"></div>\
+					<span class="checkout-product-name">' + items_checkout[x].name + '</span><br>\
+					<span class="checkout-product-yarn" id="checkout-product-options">-' + items_checkout[x].yarn +'</span><br>\
+					<span class="checkout-product-filling" id="checkout-product-options">-' + items_checkout[x].filling + '</span>\
+				</div><div class="checkout-quantity">' + items_checkout[x].quantity + '</div>\
+			<div class="checkout-price">$' + items_checkout[x].price + '</div>\
+			<div class="checkout-delete"><img id="'+ x +'"class="trash" src="images/trash.svg"</div>\
 		</div>');
 
-   		$(".checkout-image-file").attr("src",items_checkout[x].image);
-   		$(".checkout-image-file").attr("style","height: 93px;");
-   		$(".checkout-product-name").text(items_checkout[x].name);
-   		$(".checkout-product-yarn").text("-" + items_checkout[x].yarn);
- 	  	$(".checkout-product-filling").text("-" + items_checkout[x].filling);
+   		$(".checkout-image-file").attr("style","height: 90px;");
+   		$(".trash").attr("style","height: 20px; margin-top: 35px");
+   		totalPrice = parseInt(totalPrice) + parseInt(items_checkout[x].price);
    	}
 
-	
+   	  	$("body .checkout-container").append(
+  			'<br><br><h3>Your Total: $'+ totalPrice + '</h3>');
+
+	$(document).on("click", '.trash', function() {
+  		var items = JSON.parse(localStorage.getItem("savedItems"));
+   	 	totalPrice = parseInt(totalPrice) - parseInt(items[event.target.id].price);
+		items.splice([event.target.id],1);
+		localStorage.setItem("savedItems", JSON.stringify(items));
+  	 	var items_checkout = JSON.parse(localStorage.getItem("savedItems"));
+		$("body #checkout-box").children("div").remove();
+		$("body .checkout-container").children("h3").remove();
+		for (x = 0; x < items_checkout.length; x++) {
+	  		$("body #checkout-box").append(
+	  			'<div class="checkout-item">\
+	  				<div class="checkout-image"> \
+						<img class="checkout-image-file" src="' + items_checkout[x].image + '">\
+					</div>\
+					<div class="checkout-name"><br> \
+						<span class="checkout-product-name">' + items_checkout[x].name + '</span><br>\
+						<span class="checkout-product-yarn" id="checkout-product-options">-' + items_checkout[x].yarn +'</span><br>\
+						<span class="checkout-product-filling" id="checkout-product-options">-' + items_checkout[x].filling + '</span>\
+					</div><div class="checkout-quantity">' + items_checkout[x].quantity + '</div>\
+				<div class="checkout-price">' + items_checkout[x].price + '</div>\
+				<div class="checkout-delete"><img id="'+ x +'"class="trash" src="images/trash.svg"</div>\
+			</div>');
+	   		$(".checkout-image-file").attr("style","height: 90px;");
+	   		$(".trash").attr("style","height: 20px; margin-top: 35px");
+	   	}
+	   	$("body .checkout-container").append(
+  			'<br><br><h3>Your Total: $'+ totalPrice + '</h3>');
+
+	});
 });
