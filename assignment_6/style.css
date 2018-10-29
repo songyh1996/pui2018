@@ -490,7 +490,7 @@ form {
 	margin-top: 20px;
 }
 
-#required {
+.required {
 	color: #FF85BF;
 	display: inline;
 }
@@ -507,7 +507,7 @@ form {
 }
 
 
-input[type=text]#half-input {
+input[type=text].half-input {
 	width: 170px;
 	height: 30px;
 	margin-top: 10px;
