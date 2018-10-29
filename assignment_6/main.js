@@ -11,6 +11,8 @@ function Item(image, name, yarn, filling, quantity, price) {
 $(document).ready(function() {
 	var items = [];
   	var items = JSON.parse(localStorage.getItem("savedItems"));
+  	var wishes = [];
+  	var wishes = JSON.parse(localStorage.getItem("wishlist"));
 	// Yarn Color
 	$("#yarn-1").click(function() {
 		$("#yarn-color").text("After School Special");
@@ -31,7 +33,7 @@ $(document).ready(function() {
   	});
 
 	$("#yarn-3").click(function() {
-		$("#yarn-color").text("Cozy Demim");
+		$("#yarn-color").text("Cozy Denim");
 		$("#gallery-main-image").attr("src","images/couch_pillow/yarn3/gallery-main.png");
 		$("#thumbnail-1").attr("src","images/couch_pillow/yarn3/thumbnail-1.png");
 		$("#thumbnail-2").attr("src","images/couch_pillow/yarn3/thumbnail-2.png");
@@ -64,6 +66,7 @@ $(document).ready(function() {
 		$(".card-price").text("$75");
   	});
 
+	// Add to cart
   	$(".secondary-button").click(function() {
   		let image = $("#gallery-main-image").attr('src');
   		let name = $('.product-title')[0].textContent;
@@ -71,7 +74,6 @@ $(document).ready(function() {
   		let filling = $('#filling-choice')[0].textContent;
   		let quantity = $('.quantity')[0].value;
   		let price = $('.card-price')[0].textContent.substr(1);
-  		console.log(typeof price);
   		item = new Item(image, name, yarn, filling, quantity, price);
   		if (items == null) {
   			items = [];
@@ -84,8 +86,31 @@ $(document).ready(function() {
   		localStorage.setItem("savedItems", JSON.stringify(items));
   	})
 
+  	// Add to wishlist
+  	$(".primary-button").click(function() {
+  		let image = $("#gallery-main-image").attr('src');
+  		let name = $('.product-title')[0].textContent;
+  		let yarn = $('#yarn-color')[0].textContent;
+  		let filling = $('#filling-choice')[0].textContent;
+  		let quantity = $('.quantity')[0].value;
+  		let price = $('.card-price')[0].textContent.substr(1);
+  		item = new Item(image, name, yarn, filling, quantity, price);
+  		if (wishes == null) {
+  			wishes = [];
+  			wishes.push(item);
+  		}
+  		else {
+  			wishes.push(item);
+  		}
+  		localStorage.setItem("wishlist", JSON.stringify(wishes));
+  	})
+
   	// Creating Cart Page
    	var items_checkout = JSON.parse(localStorage.getItem("savedItems"));
+   	if (items_checkout.length == 0) {
+   		$("body #checkout-box").append(
+  			'<div class="empty-message"> Your Cart is empty.</div>');
+   	}
    	let totalPrice = parseInt(0);
    	for (x = 0; x < items_checkout.length; x++) {
   		$("body #checkout-box").append(
@@ -110,6 +135,7 @@ $(document).ready(function() {
    	  	$("body .checkout-container").append(
   			'<br><br><h3>Your Total: $'+ totalPrice + '</h3>');
 
+   	// Remove from cart
 	$(document).on("click", '.trash', function() {
   		var items = JSON.parse(localStorage.getItem("savedItems"));
    	 	totalPrice = parseInt(totalPrice) - parseInt(items[event.target.id].price);
@@ -129,7 +155,7 @@ $(document).ready(function() {
 						<span class="checkout-product-yarn" id="checkout-product-options">-' + items_checkout[x].yarn +'</span><br>\
 						<span class="checkout-product-filling" id="checkout-product-options">-' + items_checkout[x].filling + '</span>\
 					</div><div class="checkout-quantity">' + items_checkout[x].quantity + '</div>\
-				<div class="checkout-price">' + items_checkout[x].price + '</div>\
+				<div class="checkout-price">$' + items_checkout[x].price + '</div>\
 				<div class="checkout-delete"><img id="'+ x +'"class="trash" src="images/trash.svg"</div>\
 			</div>');
 	   		$(".checkout-image-file").attr("style","height: 90px;");
@@ -137,6 +163,66 @@ $(document).ready(function() {
 	   	}
 	   	$("body .checkout-container").append(
   			'<br><br><h3>Your Total: $'+ totalPrice + '</h3>');
+	   	if (items_checkout.length == 0) {
+	   		$("body #checkout-box").append(
+	  			'<div class="empty-message"> Your Cart is empty.</div>');
+	   	}
 
 	});
+
+	// Create wishlist page
+   	var items_wishlist = JSON.parse(localStorage.getItem("wishlist"));
+   	if (items_wishlist.length == 0) {
+   		$("body #wishlist-box").append(
+  			'<div class="empty-message"> Your Wishlist is empty.</div>');
+   	}
+   	for (x = 0; x < items_wishlist.length; x++) {
+  		$("body #wishlist-box").append(
+  			'<div class="checkout-item">\
+  				<div class="checkout-image"> \
+					<img class="checkout-image-file" src="' + items_wishlist[x].image + '">\
+				</div>\
+				<div class="checkout-name"><br> \
+					<span class="checkout-product-name">' + items_wishlist[x].name + '</span><br>\
+					<span class="checkout-product-yarn" id="checkout-product-options">-' + items_wishlist[x].yarn +'</span><br>\
+					<span class="checkout-product-filling" id="checkout-product-options">-' + items_wishlist[x].filling + '</span>\
+				</div><div class="checkout-quantity">' + items_wishlist[x].quantity + '</div>\
+			<div class="checkout-price">$' + items_wishlist[x].price + '</div>\
+			<div class="checkout-delete"><img id="'+ x +'"class="trash-wishlist" src="images/trash.svg"</div>\
+		</div>');
+
+   		$(".checkout-image-file").attr("style","height: 90px;");
+   		$(".trash-wishlist").attr("style","height: 20px; margin-top: 35px");
+   	}
+
+   	// Remove from wishlist
+	$(document).on("click", '.trash-wishlist', function() {
+  		var items = JSON.parse(localStorage.getItem("wishlist"));
+		items.splice([event.target.id],1);
+		localStorage.setItem("wishlist", JSON.stringify(items));
+  	 	var items_wishlist = JSON.parse(localStorage.getItem("wishlist"));
+		$("body #wishlist-box").children("div").remove();
+		$("body .wishlist-container").children("h3").remove();
+		for (x = 0; x < items_wishlist.length; x++) {
+	  		$("body #wishlist-box").append(
+	  			'<div class="checkout-item">\
+	  				<div class="checkout-image"> \
+						<img class="checkout-image-file" src="' + items_wishlist[x].image + '">\
+					</div>\
+					<div class="checkout-name"><br> \
+						<span class="checkout-product-name">' + items_wishlist[x].name + '</span><br>\
+						<span class="checkout-product-yarn" id="checkout-product-options">-' + items_wishlist[x].yarn +'</span><br>\
+						<span class="checkout-product-filling" id="checkout-product-options">-' + items_wishlist[x].filling + '</span>\
+					</div><div class="checkout-quantity">' + items_wishlist[x].quantity + '</div>\
+				<div class="checkout-price">$' + items_wishlist[x].price + '</div>\
+				<div class="checkout-delete"><img id="'+ x +'"class="trash-wishlist" src="images/trash.svg"</div>\
+			</div>');
+	   		$(".checkout-image-file").attr("style","height: 90px;");
+	   		$(".trash-wishlist").attr("style","height: 20px; margin-top: 35px");
+	   	}
+	   	if (items_wishlist.length == 0) {
+   			$("body #wishlist-box").append('<div class="empty-message"> Your Wishlist is empty.</div>');
+   		}
+	});
+
 });

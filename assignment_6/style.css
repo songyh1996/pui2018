@@ -164,7 +164,7 @@ li {
 }
 
 #right-aligned-menu a {
-	padding: 60px;
+	padding: 35px;
 }
 
 #landing-message {
@@ -728,4 +728,27 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 	font-family: "P22Heavy";
 	font-size: 0.7em;
 	color: #939393;
+}
+
+.empty-message {
+	font-family: "P22Heavy";
+	text-align: center;
+	color: #D18FB0;
+}
+
+/*Wishlist Page*/
+#wishlist-box {
+	margin-left: auto;
+	margin-right: auto;
+	width: 660px;
+	box-shadow: 0px 8px 50px 2px rgba(212, 212, 212, 0.5);
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.wishlist-container {
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 660px;
+	height: 100vh;
 }
