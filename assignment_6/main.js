@@ -13,6 +13,17 @@ $(document).ready(function() {
   	var items = JSON.parse(localStorage.getItem("savedItems"));
   	var wishes = [];
   	var wishes = JSON.parse(localStorage.getItem("wishlist"));
+
+  	// Cart item count
+  	cartCount = items.length
+  	$("body .cart-menu").children("div").remove();
+ 	$("body .cart-menu").append('<div class="count-display"> (' + cartCount + ")");
+
+ 	// Wishlist item count
+  	wishCount = wishes.length
+  	$("body .wish-menu").children("div").remove();
+ 	$("body .wish-menu").append('<div class="wish-display"> (' + wishCount + ")");
+
 	// Yarn Color
 	$("#yarn-1").click(function() {
 		$("#yarn-color").text("After School Special");
@@ -82,8 +93,10 @@ $(document).ready(function() {
   		else {
   			items.push(item);
   		}
-  		console.log(items);
   		localStorage.setItem("savedItems", JSON.stringify(items));
+  		cartCount = items.length
+ 		$("body .cart-menu").children("div").remove();
+ 		$("body .cart-menu").append('<div class="count-display"> (' + cartCount + ")");
   	})
 
   	// Add to wishlist
@@ -103,6 +116,10 @@ $(document).ready(function() {
   			wishes.push(item);
   		}
   		localStorage.setItem("wishlist", JSON.stringify(wishes));
+	 	// Wishlist item count
+	  	wishCount = wishes.length
+	  	$("body .wish-menu").children("div").remove();
+	 	$("body .wish-menu").append('<div class="wish-display"> (' + wishCount + ")");
   	})
 
   	// Creating Cart Page
@@ -168,6 +185,11 @@ $(document).ready(function() {
 	  			'<div class="empty-message"> Your Cart is empty.</div>');
 	   	}
 
+	   	// Cart item count
+  		cartCount = items_checkout.length
+  		$("body .cart-menu").children("div").remove();
+ 		$("body .cart-menu").append('<div class="count-display"> (' + cartCount + ")");
+
 	});
 
 	// Create wishlist page
@@ -223,6 +245,10 @@ $(document).ready(function() {
 	   	if (items_wishlist.length == 0) {
    			$("body #wishlist-box").append('<div class="empty-message"> Your Wishlist is empty.</div>');
    		}
+   		wishCount = items_wishlist.length;
+	  	$("body .wish-menu").children("div").remove();
+	 	$("body .wish-menu").append('<div class="wish-display"> (' + wishCount + ")");
+
 	});
 
 });

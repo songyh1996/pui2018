@@ -736,6 +736,14 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 	color: #D18FB0;
 }
 
+.count-display {
+	display: inline-block;
+}
+
+.wish-display {
+	display: inline-block;
+}
+
 /*Wishlist Page*/
 #wishlist-box {
 	margin-left: auto;
