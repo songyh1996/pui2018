@@ -6,12 +6,16 @@ import Image from '../components/image'
 
 const IndexPage = () => (
   <Layout>
-    <h1>Carnegie Mellon University '20 <br/> Information Systems + Human-Computer Interaction <br/>User Experience Designer</h1>
-    <p>Previously at PayPal, Venmo, and Apple</p>
-    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+  	<div className="Hero">
+  		<div className="HeroGroup">
+  			<h1>Carnegie Mellon University '20 <br/> Information Systems + Human-Computer Interaction <br/>User Experience Designer</h1>
+   			<h2>Previously at PayPal, Venmo, and Apple</h2>
+  		</div>
+  	</div>
+  	<div className="Project">
+  		<div className="ProjectGroup">
+  		</div>
+  	</div>
   </Layout>
 )
 
