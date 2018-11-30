@@ -1,13 +1,9 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import ProjectCard from '../components/project-card'
 import Footer from '../components/footer'
-import ProjectHero from '../components/project-hero'
 import AboutHero from '../components/about-hero'
 import Paragraph from '../components/paragraph'
 
 import Layout from '../components/layout'
-import Image from '../components/image'
 
 const IndexPage = () => (
   <Layout>
@@ -16,7 +12,7 @@ const IndexPage = () => (
       title="About Me"
       description="Carnegie Mellon University B.S. in Information Systems, double major in Human-Computer Interaction. Class of May 2020"
     />
-    <div class="ProjectContent">
+    <div className="ProjectContent">
   	 	<Paragraph 
 	    	category="WELCOME."
 	    	title="I'm a UX designer and a design strategist from Carnegie Mellon University."

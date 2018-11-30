@@ -1,12 +1,9 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import ProjectCard from '../components/project-card'
 import Footer from '../components/footer'
 import ProjectHero from '../components/project-hero'
 import Paragraph from '../components/paragraph'
 
 import Layout from '../components/layout'
-import Image from '../components/image'
 
 const IndexPage = () => (
   <Layout>
@@ -16,7 +13,7 @@ const IndexPage = () => (
       title="My Benefits"
       description="My Benefits offer a comprehensive and easy-to-use dashboard that summarizes all available PayPal benefits for the users. It aims to increase user engagement with various PayPal benefits."
     />
-    <div class="ProjectContent">
+    <div className="ProjectContent">
     	<Paragraph 
 	    	category="PROBLEM STATEMENT"
 	    	title="Many consumers displayed confusion towards PayPal’s benefits."
@@ -37,8 +34,8 @@ const IndexPage = () => (
 	    	title="Top 3 Customer Segments"
 	    	description="The top 3 customer segments were selected by two metrics: monthly discretionary spending and PayPal usage."
     	/>
-    	<div class="full-width-image">
-    		<img src={require('../images/customer-segments.png')} />
+    	<div className="full-width-image">
+    		<img src={require('../images/customer-segments.png')} alt="customer segments" />
     	</div>
 
     	<Paragraph 
@@ -46,8 +43,8 @@ const IndexPage = () => (
 	    	title="A coherent theme present across the three segments."
 	    	description="A coherent theme present across the three segments was that they would appreciate convenient ways to see multiple financial options and advice that would help them make better financial decisions."
     	/>
-    	<div class="full-width-image">
-    		<img src={require('../images/synthesis-conclusion.png')} />
+    	<div className="full-width-image">
+    		<img src={require('../images/synthesis-conclusion.png')} alt="synthesis conclusion"/>
     	</div>
 
 
@@ -62,8 +59,8 @@ const IndexPage = () => (
 	    	title="Feature Hierarchy"
 	    	description="I first identified all types of available PayPal benefits, and explored the different sub-elements for each of the benefits. For example, Purchase Protection feature would consist of several sub-elements such as: enrollment status, open a dispute and dispute progress. The features were then customized with the three types of users in mind: Potential, New, and Existing."
     	/>
-    	 <div class="full-width-image" id="shadow">
-    		<img src={require('../images/feature-hierarchy.png')} />
+    	 <div className="full-width-image" id="shadow">
+    		<img src={require('../images/feature-hierarchy.png')} alt="feature hierarchy" />
     	</div>
 
 
@@ -72,8 +69,8 @@ const IndexPage = () => (
 	    	title="My Benefits Module Designs"
 	    	description="My Benefits page includes multiple modules that each represent a single PayPal benefit. The modules include real-time data and actionable CTAs to allow management of your PayPal benefits."
     	/>
-    	 <div class="full-width-image">
-    		<img src={require('../images/module-designs.png')} />
+    	 <div className="full-width-image">
+    		<img src={require('../images/module-designs.png')} alt="module designs"/>
     	</div>
 
     	<Paragraph 
@@ -81,8 +78,8 @@ const IndexPage = () => (
 	    	title="The go-to dashboard for all PayPal benefits."
 	    	description="Pay After Delivery. Purchase Protection. Free Return Shipping."
     	/>
-    	<div class="full-width-image">
-    		<img src={require('../images/my-benefits-final.gif')} />
+    	<div className="full-width-image">
+    		<img src={require('../images/my-benefits-final.gif')} alt="final prototype"/>
     	</div>
     </div>
   	<Footer />

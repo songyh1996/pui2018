@@ -38,7 +38,7 @@ class Header extends React.Component {
           </div>
           <div className="right-nav">
             <Link className="menu" to="/about">ABOUT ME</Link>
-            <a className="menu" href="https://drive.google.com/file/d/1XoP196JAtrizw-0ZUY4tJRdVMDNstrlU/view" target="_blank">RÉSUMÉ</a>
+            <a className="menu" href="https://drive.google.com/file/d/1XoP196JAtrizw-0ZUY4tJRdVMDNstrlU/view" target="_blank" rel="noopener noreferrer">RÉSUMÉ</a>
           </div>
         </div>
       </div>
