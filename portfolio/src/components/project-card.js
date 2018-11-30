@@ -7,7 +7,7 @@ const ProjectCard = props => (
 		<div id="project-card-title"><h3>{props.title}</h3></div>
 		<div id="project-card-logo-container"><img id="project-card-logo" src={props.logo} /></div>
 		<p class="Project-Card-Description">{props.text}</p>
-		<Link to={props.link}>View Project →</Link>
+		<Link id="view-project" to={props.link}>View Project →</Link>
 	</div>
 )
 
