@@ -2,7 +2,7 @@
 	position: fixed;
 	width: 100%;
 	z-index: 100;
-	background-color: #FAFAFA;
+	background-color: white;
 	padding: 42px 0;
 	transition: 0.5s cubic-bezier(0.2, 0.1, 0.25, 1);
 
