@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import ProjectCard from '../components/project-card'
 import Footer from '../components/footer'
 import ProjectHero from '../components/project-hero'
+import AboutHero from '../components/about-hero'
 import Paragraph from '../components/paragraph'
 
 import Layout from '../components/layout'
@@ -10,13 +11,17 @@ import Image from '../components/image'
 
 const IndexPage = () => (
   <Layout>
-    <ProjectHero 
-      background={require('../images/cuberover-hero.jpg')}
-      logo={require('../images/cuberover-logo.png')}
-      title="CubeRover TeleOperation Interface"
-      description="Creating a user interface for the tele-operation control of the CubeRover. Expected to launch to the Moon in 2021 in collaboration with Astrobotic and NASA using Astrobotic’s Peregrine Lander."
+    <AboutHero 
+      background={require('../images/about.jpg')}
+      title="About Me"
+      description="Carnegie Mellon University B.S. in Information Systems, double major in Human-Computer Interaction. Class of May 2020"
     />
     <div class="ProjectContent">
+  	 	<Paragraph 
+	    	category="WELCOME."
+	    	title="I'm a UX designer and a design strategist from Carnegie Mellon University."
+	    	description="Core guiding principle of my design is to strike the balance between user goals and business goals. While users must be considered first in every design process, business goals must also be taken into consideration in order for the product to create true impact. These business goals include monetization strategies, market analysis, and market strategies. As a design strategist, I also like to focus on envisioning a holistic product ecosystem, where individual features make up a product, and each products work in unison to compose a powerful ecosystem with synergistic influences in people's lives."
+    	/>
     </div>
   	<Footer />
   </Layout>
