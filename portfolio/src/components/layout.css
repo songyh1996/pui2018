@@ -33,7 +33,6 @@ body {
   margin: 0;
   font-size: 1em;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
   color: #353535;
   background-color: #FAFAFA;
 }
@@ -44,9 +43,10 @@ a {
 }
 
 .Hero {
-  width: 940px;
+  max-width: 1100px;
   height: 520px;
   margin: 0 auto;
+  padding: 0 80px;
 }
 
 .HeroGroup {
@@ -76,3 +76,44 @@ a {
 .ProjectGroup {
   margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+  .Hero {
+    max-width: 768px;
+    height: 520px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+
+  .Hero h1 {
+    font-size: 1.2em;
+    line-height: 2.0em;
+    margin-bottom: 20px;
+  }
+
+  .Hero h2 {
+    font-size: 1.2em;
+    line-height: 2.0em;
+  }
+}
+
+@media (max-width: 425px) {
+  .Hero {
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 0 25px;
+  }
+
+  .Hero h1 {
+    font-size: 1em;
+    line-height: 2.0em;
+    margin-bottom: 20px;
+  }
+
+  .Hero h2 {
+    font-size: 1em;
+    line-height: 2.0em;
+  }
+}
+
+

@@ -4,16 +4,16 @@
 	z-index: 100;
 	background-color: #FAFAFA;
 	border: 1px solid red;
-	padding-top: 38.5px;
-	padding-bottom: 38.5px;
+	padding: 38.5px 0;
 }
 
 .HeaderGroup {
-	max-width: 940px;
+	max-width: 1100px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
-
+	border: 1px solid red;
+	padding: 0 80px;
 }
 
 #logo {
@@ -34,5 +34,44 @@
 	grid-column-gap: 50px;
 	align-items: center;
 	justify-items: center;
+}
 
+@media (max-width: 768px) {
+	.Header {
+		padding: 30px 0;	
+	}
+
+	.HeaderGroup {
+		padding: 0 60px;
+	}
+
+
+	.right-nav {
+		grid-column-gap: 40px;
+	}
+}
+
+@media (max-width: 425px) {
+	.Header {
+		padding: 20px 0;	
+	}
+
+	.HeaderGroup {
+		padding: 0 25px;
+	}
+
+	#logo {
+	 	font-size: 0.7em;
+		font-weight: 600;
+		letter-spacing: 0.2em;
+	}
+	.menu {
+		font-size: 0.4em;
+		font-weight: 600;
+		letter-spacing: 0.15em;
+	}
+
+	.right-nav {
+		grid-column-gap: 20px;
+	}
 }
