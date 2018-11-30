@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import ProjectCard from '../components/project-card'
+import Footer from '../components/footer'
 
 import Layout from '../components/layout'
 import Image from '../components/image'
@@ -45,7 +46,7 @@ const IndexPage = () => (
   			/>
   		</div>
   	</div>
-  	<div class="footer"><footer>Copyright © 2018 Antonio Song. All rights reserved.</footer></div>
+  	<Footer />
   </Layout>
 )
 

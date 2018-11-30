@@ -88,6 +88,12 @@ a {
 
 .ProjectsGroup {
   margin: 0 auto;
+  animation: HeroAnimation;
+  animation-delay: 1s;
+  animation-duration: 1.5s;
+  opacity: 0 ;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.2, 0.1, 0.25, 1);
 }
 
 
@@ -148,9 +154,20 @@ a {
 
 .footer {
   max-width: 940px;
-  height: 75px;
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 50px 80px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.react {
+  justify-self: end;
+  width: 50px;
+}
+
+.react-img {
+  width: 100%;
 }
 
 /*media queries*/
@@ -200,7 +217,7 @@ a {
   }
 }
 
-.footer {
+footer {
   max-width: 940px;
   height: 75px;
   margin: 0 auto;
@@ -249,7 +266,7 @@ a {
     font-size: 0.8em;
   }
 
-  .footer {
+  footer {
     font-size: 0.8em;
   }
 }

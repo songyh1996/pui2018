@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+
+
 const ProjectCard = props => (
 	<div className="Project-Card">
 		<img id="project-card-thumbnail" src={props.thumbnail} />
