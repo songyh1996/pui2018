@@ -59,11 +59,11 @@ a {
   font-weight: 500;
   font-size: 1.5em;
   margin-bottom: 46px;
-  animation: HeroAnimation;
+/*  animation: HeroAnimation;
   animation-duration: 1.5s;
   opacity: 0 ;
   animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.2, 0.1, 0.25, 1);
+  animation-timing-function: cubic-bezier(0.2, 0.1, 0.25, 1);*/
 }
 
 .Hero h2 {

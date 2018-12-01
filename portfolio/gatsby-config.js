@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Antonio Song | User Experience Designer',
   },
+  pathPrefix: "/portfolio",
   plugins: [
     'gatsby-plugin-react-helmet',
     {
